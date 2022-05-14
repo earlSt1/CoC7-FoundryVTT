@@ -165,6 +165,8 @@ export function compendiumFilter () {
         )
       html.find('select').change(performFilter.bind(this))
       html.find('input').keyup(performFilter.bind(this))
+      //Notify Compendium Folders that the new filters have been created
+      Hooks.call('renderCompendiumFoldersButtons');
     }
   })
 }
